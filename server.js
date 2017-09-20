@@ -9,7 +9,8 @@ var mywssocks = require('./modules/mywssocks')({
     port:    (process.env.MYWSSOCKS_SERVICE_PORT || 8080       ),
     debug:   (process.env.MYWSSOCKS_SERVICE_PORT ? false : true),
     dump:    (process.env.MYWSSOCKS_SERVICE_PORT ? false : true),
-    extended:                                              true
+    extended:                                              true ,
+    logTime:                                               true
 });
 
 module.exports = mywssocks.app;
