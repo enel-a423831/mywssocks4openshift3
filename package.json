@@ -1,17 +1,13 @@
 {
-  "name": "nodejs-ex",
+  "name": "mywssocks",
   "version": "0.0.1",
-  "description": "Node.js sample app for OpenShift 3",
+  "description": "...",
   "main": "server.js",
   "dependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "ejs": "^2.4.1",
-    "express": "^4.13.4",
-    "mocha": "^2.4.5",
-    "mongodb": "^2.1.16",
-    "morgan": "^1.7.0",
-    "object-assign":"4.1.0"
+    "express": "~3.4.4",
+    "timezone": "~0.0.41",
+    "ws": "~0.6.5",
+    "socksv5": "~0.0.6"
   },
   "engine": {
     "node": "*",
@@ -23,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+    "url": "https://github.com/enel-a423831/mywssocks4openshift3.git"
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
+  "author": "Sandro Casali <sandro.casali@enel.com>",
   "license": "CC-BY-1.0",
   "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
+    "url": "https://github.com/enel-a423831/mywssocks4openshift3/issues"
   },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "homepage": "https://github.com/enel-a423831/mywssocks4openshift3"
 }
