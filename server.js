@@ -12,6 +12,8 @@ var mywssocks = require('./modules/mywssocks')({
     extended:                                             true
 });
 
+module.exports = mywssocks.app;
+
 /*******************/
 /* server.js : EOF */
 /*******************/
