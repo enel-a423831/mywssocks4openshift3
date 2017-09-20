@@ -4,7 +4,8 @@
 /*************/
 
 var mywssocks = require('./modules/mywssocks')({
-    addr:    (process.env.MYWSSOCKS_SERVICE_HOST || "127.0.0.1"),
+    addr:    (                                        "0.0.0.0"),
+//  addr:    (process.env.MYWSSOCKS_SERVICE_HOST || "127.0.0.1"),
     port:    (process.env.MYWSSOCKS_SERVICE_PORT || 8080       ),
     debug:   (process.env.MYWSSOCKS_SERVICE_PORT ? false : true),
     dump:    (process.env.MYWSSOCKS_SERVICE_PORT ? false : true),
