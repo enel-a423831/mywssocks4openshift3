@@ -224,8 +224,12 @@ Connection.prototype.Pause = function()
  */
 Connection.prototype.Resume = function()
 {
-    this.ws.resume();
-    this.debug&&mywssocks.Debug("WebSocket Connection resumed");
+    if (this.ws.readyState !== WebSocket.OPEN) {
+      this.debug&&mywssocks.Debug("WebSocket Connection not resumed (already closed)");
+    } else {
+      this.ws.resume();
+      this.debug&&mywssocks.Debug("WebSocket Connection resumed");
+    }
 };
 
 /**
