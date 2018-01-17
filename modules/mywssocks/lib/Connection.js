@@ -215,8 +215,12 @@ Connection.prototype.OnCloseConnection = function()
  */
 Connection.prototype.Pause = function()
 {
-    this.ws.pause();
-    this.debug&&mywssocks.Debug("WebSocket Connection paused");
+    if (this.ws.readyState !== WebSocket.OPEN) {
+        this.debug&&mywssocks.Debug("WebSocket Connection not paused (already closed)");
+    } else {
+        this.ws.pause();
+        this.debug&&mywssocks.Debug("WebSocket Connection paused");
+    }
 };
 
 /**
@@ -225,10 +229,10 @@ Connection.prototype.Pause = function()
 Connection.prototype.Resume = function()
 {
     if (this.ws.readyState !== WebSocket.OPEN) {
-      this.debug&&mywssocks.Debug("WebSocket Connection not resumed (already closed)");
+        this.debug&&mywssocks.Debug("WebSocket Connection not resumed (already closed)");
     } else {
-      this.ws.resume();
-      this.debug&&mywssocks.Debug("WebSocket Connection resumed");
+        this.ws.resume();
+        this.debug&&mywssocks.Debug("WebSocket Connection resumed");
     }
 };
 
