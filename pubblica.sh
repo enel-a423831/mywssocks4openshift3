@@ -30,7 +30,7 @@ if ! oc project | grep '[" ]mywssocks[" ]' ; then
 fi
 git add . || exit
 git commit -m 'My changes' || exit
-#git push
+git push
 oc start-build mywssocks --follow || exit
 oc logs -f dc/mywssocks || exit
 
