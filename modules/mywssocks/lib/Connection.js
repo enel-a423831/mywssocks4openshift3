@@ -92,7 +92,7 @@ Connection.prototype.OnMessage = function(data)
             mywssocks.Log("SOCKSv5 CONNECT to "+data[3]+" address type from "+this.remoteId+" ("+mywssocks.Stringify(data)+")");
         }
     }
-    this.socks.Write(data, function() {
+    this.socks&&this.socks.Write(data, function() {
         this.debug&&mywssocks.Debug("Sended "+data.length+" bytes to SOCKS server");
         this.Resume();
     }.bind(this));

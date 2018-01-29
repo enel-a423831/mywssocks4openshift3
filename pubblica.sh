@@ -9,7 +9,10 @@ for i in ../../../*/"$(basename "$(dirname "$(pwd)")")"/"$(basename "$(pwd)")" ;
 		echo "##### sync with $(cd $i && pwd) DONE."
 	fi
 done
-. tsocks -on
+#. tsocks -on
+export ftp_proxy=http://my-proxy:3128
+export http_proxy=$ftp_proxy
+export https_proxy=$ftp_proxy
 #if ! rhc account </dev/null | grep "$(basename "$(dirname "$(pwd)")")" ; then
 #        echo "
 #yes" | rhc setup -l $(basename "$(dirname "$(pwd)")") -p EnellE00 || exit
